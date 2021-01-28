@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Nitrogen wallpaper
+Comment=
+Exec=nitrogen --set-auto '/home/ksui/Pictures/sony-xperia-xz3-5120x2880-android-p-android-9-0-pistachio-ice-cream-5k-20593.jpg'
+OnlyShowIn=XFCE;
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false
+
