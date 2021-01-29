@@ -24,6 +24,7 @@ set ruler
 set number
 set cursorline
 set cursorcolumn
+set mouse=nvi
 
 " Makes search act like search in modern browsers
 set incsearch 
@@ -60,3 +61,6 @@ noremap j n
 noremap J N
 noremap l e
 noremap L E
+
+
+
