@@ -1,73 +1,16 @@
 exec picom 
 
 gaps inner 8
-gaps outer 0
+gaps outer 2
 smart_gaps on
-
-
 set $mod Mod1
-
 font pango:Hack 11
-
-bindsym F2 exec "rofi -show drun"
-
-bindsym $mod+i resize grow width 4 px or 4 ppt
-bindsym $mod+h resize shrink width 4 px or 4 ppt
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+bindsym F2 exec "rofi -show drun"
 
-# kill focused window
-bindsym Control+q kill
-
-# change focus
-bindsym $mod+e focus right
-bindsym $mod+n focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-
-
-# move focused window
-bindsym $mod+Shift+e move right
-bindsym $mod+Shift+n move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-# bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
+######################## WORKSPACE ########################
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -93,10 +36,66 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+######################## MODES SWITCH ########################
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+f layout toggle split
+
+# enter fullscreen mode for the focused container
+bindsym $mod+q fullscreen toggle
+
+
+######################## NAVIGATION ########################
+
+# change focus
+bindsym $mod+e focus right
+bindsym $mod+n focus left
+bindsym $mod+d focus down
+bindsym $mod+u focus up
+
+######################## MOVE & RISIZE ########################
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+comma move left
+bindsym $mod+Down move down
+bindsym $mod+Up move up
+bindsym $mod+period move right
+
+bindsym $mod+i resize grow width 4 px or 4 ppt
+bindsym $mod+h resize shrink width 4 px or 4 ppt
+
+
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+
+# kill focused window
+bindsym Control+q kill
+
+
+# split in horizontal orientation
+# bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+
 
 
 # class                 border  bground text    indicator child_border
