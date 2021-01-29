@@ -9,11 +9,7 @@ font:
   normal:
     family: Hack
   size: 14
-
-cursor:
-  style:
-    shape: Beam
-
+ 
 colors:
   primary:
     background: '#2D2A2E'
