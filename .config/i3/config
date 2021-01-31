@@ -1,4 +1,5 @@
 exec picom 
+exec /home/ksui/Public/xcapeConfig.sh
 
 gaps inner 8
 gaps outer 2
