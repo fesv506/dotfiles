@@ -11,6 +11,7 @@ font pango:Hack 11
 bindsym $mod+Return exec alacritty
 # run rofi
 bindsym F2 exec "rofi -show drun"
+bindsym F9 exec "xfce4-session-logout"
 # word delete
 bindsym --release $mod+BackSpace exec "xdotool key ctrl+BackSpace"
 
