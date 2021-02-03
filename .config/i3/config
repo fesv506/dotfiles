@@ -9,7 +9,10 @@ font pango:Hack 11
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+# run rofi
 bindsym F2 exec "rofi -show drun"
+# word delete
+bindsym --release $mod+BackSpace exec "xdotool key ctrl+BackSpace"
 
 ######################## WORKSPACE ########################
 

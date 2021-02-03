@@ -1,6 +1,5 @@
 
 
-
 ;; evil-snipe configs
 (setq evil-snipe-scope 'whole-buffer
       evil-snipe-repeat-scope 'whole-buffer)
@@ -12,10 +11,26 @@
 ; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'nil)
 
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-monokai-classic)
+;; Load the theme
+(setq doom-theme 'doom-molokai)
+
+;; company config
+(setq company-idle-delay 0 )
+
+;; Some functionality uses this to identify you, e.g. GPG configuration, email
+;; clients, file templates and snippets.
+(setq user-full-name "jory18"
+      user-mail-address "ksui21@yahoo.co.jp")
+
+;; focus follows the mouse cursor
+(setq mouse-autoselect-window t)
+
+;; avy configs
+(setq avy-keys '(?t ?s ?r ?a ?e ?i ?p ?l?w ?o ?c ?m ?n ?f ?u ))
+
+;; add yasnippet snippets into autocomplete
+(after! anaconda-mode
+  (set-company-backend! 'anaconda-mode '(company-anaconda company-yasnippet)))
 
 ;; ksui custom keymaps
 (evil-global-set-key 'motion "i" 'evil-forward-char)
@@ -28,35 +43,26 @@
 (evil-global-set-key 'normal "r" 'evil-insert)
 (evil-global-set-key 'normal "R" 'evil-insert-line)
 
-(evil-global-set-key 'motion "j" 'evil-ex-search-next)
-(evil-global-set-key 'motion "J" 'evil-ex-search-previous)
-(evil-global-set-key 'normal "j" 'evil-ex-search-next)
-(evil-global-set-key 'normal "J" 'evil-ex-search-previous)
+(evil-global-set-key 'motion "q" 'evil-ex-search-next)
+(evil-global-set-key 'motion "Q" 'evil-ex-search-previous)
+(evil-global-set-key 'normal "q" 'evil-ex-search-next)
+(evil-global-set-key 'normal "Q" 'evil-ex-search-previous)
 (evil-global-set-key 'normal "k" 'evil-replace)
 (evil-global-set-key 'normal "K" 'evil-replace-state)
 (evil-global-set-key 'motion "l" 'evil-forward-word-end)
 (evil-global-set-key 'motion "L" 'evil-forward-WORD-end)
 
-(evil-global-set-key 'normal "q" 'evil-avy-goto-char-2)
-(evil-global-set-key 'normal "Q" 'evil-avy-goto-char-timer)
+(evil-global-set-key 'normal "f" 'evil-avy-goto-word-1-below)
+(evil-global-set-key 'normal "F" 'evil-avy-goto-word-1-above)
+(evil-global-set-key 'motion "f" 'evil-avy-goto-word-1-below)
+(evil-global-set-key 'motion "F" 'evil-avy-goto-word-1-above)
+(evil-global-set-key 'normal "j" 'evil-avy-goto-line)
+(evil-global-set-key 'normal "J" 'evil-avy-goto-char-2)
 
 (map! :leader
       :desc "Recent files" "r" #'counsel-recentf
-      :desc "Find in new frame" "t" #'find-file-other-frame
+      :desc "Open file in new frame" "t" #'find-file-other-frame
+      :desc "Kill current buffer" "k" #'kill-this-buffer
       :desc "Display buffer in new frame" "n" #'display-buffer-other-frame)
 
 (map! "C-s" #'evil-write)
-
-;; company config
-(setq company-idle-delay 0 )
-
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
-(setq user-full-name "Kinkan Sui"
-      user-mail-address "ksui21@yahoo.co.jp")
-
-
-(setq mouse-autoselect-window t)
-
-
-
