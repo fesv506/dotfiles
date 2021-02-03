@@ -23,7 +23,7 @@ default xkb_keycodes "evdev" {
 	<BKSP> = 49;
 
 	<TAB> = 23;
-	<AD01> = 24;
+	<AD01> = 108;
 	<AD02> = 25;
 	<AD03> = 26;
 	<AD04> = 27;
@@ -69,14 +69,14 @@ default xkb_keycodes "evdev" {
 	<LCTL> = 66;
 	<SPCE> = 65;
 	<RCTL> = 105;
-	<RALT> = 133;
+	<RALT> = 24;
 	// Microsoft keyboard extra keys
-	<LWIN> = 108;
+	<LWIN> = 133;
 	<RWIN> = 134;
 	<COMP> = 135;
 	alias <MENU> = <COMP>;
 
-	<ESC> = 9;
+	<ESC> = 84;
 	<FK01> = 67;
 	<FK02> = 68;
 	<FK03> = 69;
@@ -119,7 +119,7 @@ default xkb_keycodes "evdev" {
 	<KPAD> = 86;
 
 	<KP4> = 83;
-	<KP5> = 84;
+	<KP5> = 9;
 	<KP6> = 85;
 
 	<KP1> = 87;

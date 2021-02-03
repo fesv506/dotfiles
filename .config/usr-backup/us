@@ -766,7 +766,7 @@ xkb_symbols "colemak" {
     key <AD04> { [            p,            P,          oslash,         Ooblique ] };
     key <AD05> { [            g,            G,     dead_ogonek,       asciitilde ] };
     key <AD06> { [            z,            Z,    dead_abovering,     asciitilde ] };
-    key <AD07> { [            l,            L,         lstroke,          Lstroke ] };
+    key <AD07> { [            l,            L,         adiaeresis,   Adiaeresis  ] };
     key <AD08> { [            u,            U,         udiaeresis,    Udiaeresis ] };
     key <AD09> { [            o,            O,         odiaeresis,   Odiaeresis  ] };
 
@@ -774,7 +774,7 @@ xkb_symbols "colemak" {
     key <AD11> { [  bracketleft,    braceleft,   guillemotleft,        0x1002039 ] };
     key <AD12> { [ bracketright,   braceright,  guillemotright,        0x100203a ] };
 
-    key <AC01> { [            a,            A,      adiaeresis,   Adiaeresis ] };
+    key <AC01> { [            a,            A,         lstroke,      Lstroke ] };
     key <AC02> { [            r,            R,      registered,        U2030 ] };
     key <AC03> { [            s,            S,          ssharp,  dead_stroke ] };
     key <AC04> { [            t,            T,          dagger,   dead_caron ] };
@@ -783,8 +783,8 @@ xkb_symbols "colemak" {
     key <AC07> { [            n,            N,      Down,        Down ] };
     key <AC08> { [            e,            E,        Up,          Up ] };
     key <AC09> { [            i,            I,     Right,       Right ] };
-    key <AC10> { [            j,            J,         dstroke,          Dstroke ] };
-    key <AC11> { [            q,            Q,      adiaeresis,       Adiaeresis ] };
+    key <AC10> { [            j,            J,   dstroke,     Dstroke ] };
+    key <AC11> { [            q,            Q, adiaeresis, Adiaeresis ] };
 
 
     key <AB01> { [            y,            Y,              ae,               AE ] };
@@ -796,7 +796,7 @@ xkb_symbols "colemak" {
     key <AB07> { [            m,            M,     dead_macron,       asciitilde ] };
     key <AB08> { [    semicolon,     question,    questiondown,       asciitilde ] };
     key <AB09> { [   apostrophe,           at,          otilde,           Otilde ] };
-    key <AB10> { [        slash,        colon,      odiaeresis,       Odiaeresis ] };
+    key <AB10> { [         colon,       slash,      odiaeresis,       Odiaeresis ] };
 
 //  key <CAPS> { [          F14,          F15,             F16,       F17 ] };
     key <AE11> { [        minus,   underscore,    ssharp, ssharp ] };
