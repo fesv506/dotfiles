@@ -33,31 +33,40 @@
   (set-company-backend! 'anaconda-mode '(company-anaconda company-yasnippet)))
 
 ;; ksui custom keymaps
-(evil-global-set-key 'motion "i" 'evil-forward-char)
-(evil-global-set-key 'motion "I" 'evil-window-bottom)
-(evil-global-set-key 'normal "i" 'evil-forward-char)
-(evil-global-set-key 'normal "I" 'evil-window-bottom)
-(evil-global-set-key 'motion "n" 'evil-next-visual-line)
-(evil-global-set-key 'motion "e" 'evil-previous-visual-line)
 
-(evil-global-set-key 'normal "r" 'evil-insert)
-(evil-global-set-key 'normal "R" 'evil-insert-line)
+;; (evil-global-set-key 'motion "q" 'evil-ex-search-next)
+;; (evil-global-set-key 'motion "Q" 'evil-ex-search-previous)
+;; (evil-global-set-key 'normal "q" 'evil-ex-search-next)
+;; (evil-global-set-key 'normal "Q" 'evil-ex-search-previous)
+;; (evil-global-set-key 'normal "k" 'evil-replace)
+;; (evil-global-set-key 'normal "K" 'evil-replace-state)
+;; (evil-global-set-key 'motion "l" 'evil-forward-word-end)
+;; (evil-global-set-key 'motion "L" 'evil-forward-WORD-end)
+;;(evil-global-set-key 'normal 'evil-avy-goto-word-1-below)
+;;(evil-global-set-key 'normal "F" 'evil-avy-goto-word-1-above)
+;;(evil-global-set-key 'motion "f" 'evil-avy-goto-word-1-below)
+;;(evil-global-set-key 'motion "F" 'evil-avy-goto-word-1-above)
+;; (evil-global-set-key 'normal "j" 'evil-avy-goto-line)
+;; (evil-global-set-key 'normal "J" 'evil-avy-goto-char-2)
+(evil-define-key '(normal motion visual) 'global
+  "n" 'evil-next-visual-line
+;  "N"
+  "e" 'evil-previous-visual-line
+;  "E"
+  "i" 'evil-forward-char
+;  "I"
 
-(evil-global-set-key 'motion "q" 'evil-ex-search-next)
-(evil-global-set-key 'motion "Q" 'evil-ex-search-previous)
-(evil-global-set-key 'normal "q" 'evil-ex-search-next)
-(evil-global-set-key 'normal "Q" 'evil-ex-search-previous)
-(evil-global-set-key 'normal "k" 'evil-replace)
-(evil-global-set-key 'normal "K" 'evil-replace-state)
-(evil-global-set-key 'motion "l" 'evil-forward-word-end)
-(evil-global-set-key 'motion "L" 'evil-forward-WORD-end)
+  "r" 'evil-insert
+  "R" 'evil-insert-line
 
-(evil-global-set-key 'normal "f" 'evil-avy-goto-word-1-below)
-(evil-global-set-key 'normal "F" 'evil-avy-goto-word-1-above)
-(evil-global-set-key 'motion "f" 'evil-avy-goto-word-1-below)
-(evil-global-set-key 'motion "F" 'evil-avy-goto-word-1-above)
-(evil-global-set-key 'normal "j" 'evil-avy-goto-line)
-(evil-global-set-key 'normal "J" 'evil-avy-goto-char-2)
+  ;; "j"
+  ;; "J"
+  "k" 'evil-replace
+  "K" 'evil-replace-state
+  "l" 'evil-forward-word-end
+  "L" 'evil-forward-WORD-end
+  )
+
 
 (map! :leader
       :desc "Recent files" "r" #'counsel-recentf
@@ -65,4 +74,6 @@
       :desc "Kill current buffer" "k" #'kill-this-buffer
       :desc "Display buffer in new frame" "n" #'display-buffer-other-frame)
 
-(map! "C-s" #'evil-write)
+(map! "C-s" 'evil-write)
+(map! "C-v" 'evil-paste-after)
+(map! "C-c" 'evil-yank)

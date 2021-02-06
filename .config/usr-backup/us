@@ -736,7 +736,7 @@ xkb_symbols "mac" {
 };
 
 // Colemak symbols for xkb on X.Org Server 7.x
-// 2006-01-01 Shai Coleman, http://colemak.com/
+// 2006-01-01 Shai Coleman, 2021-02-06 Kinkan Sui
 
 partial alphanumeric_keys
 xkb_symbols "colemak" {
@@ -744,23 +744,23 @@ xkb_symbols "colemak" {
     include "us"
     name[Group1]= "English (Colemak)";
 
-    key <TLDE> { [        grave,        bar,          bar,    brokenbar  ] };
+    key <TLDE> { [        grave,        bar,          bar,    brokenbar  ] }; // original Backspace
 
     key <AE01> { [            1,       exclam,      exclam,          exclam ] }; 
     key <AE02> { [            2,     quotedbl,    quotedbl,              at ] }; 
-    key <AE03> { [            3,    backslash,   backslash,      numbersign ] }; 
-    key <AE04> { [            4,       dollar,    EuroSign,     dead_cedilla] }; 
+    key <AE03> { [            3,   asciitilde,  asciitilde,      asciitilde ] }; 
+    key <AE04> { [            4,       dollar,    EuroSign,    dead_cedilla ] }; 
     key <AE05> { [            5,      percent,     percent,         percent ] };
-    key <AE06> { [            6,  asciicircum,     asciicircum,          Hstroke ] }; 
-    key <AE07> { [            7,    ampersand,             eth,              ETH ] }; 
-    key <AE08> { [            8,     asterisk,           thorn,            THORN ] };
+    key <AE06> { [            6,  asciicircum,            asciicircum,               Hstroke ] }; 
+    key <AE07> { [            7,    ampersand,                    eth,                   ETH ] }; 
+    key <AE08> { [            8,    backslash,              backslash,            numbersign ] };
     key <AE09> { [            9,    parenleft,    leftsinglequotemark,   leftdoublequotemark ] };
     key <AE10> { [            0,   parenright,   rightsinglequotemark,  rightdoublequotemark ] };
-    key <AE11> { [        minus,   underscore,          endash,           emdash ] };
-    key <AE12> { [        equal,         plus,        multiply,         division ] };
-    key <BKSL> { [   numbersign,   asciitilde,      dead_grave,       dead_breve ] };
+    key <AE11> { [        slash,     question,               question,              question ] };
+    key <AE12> { [   apostrophe,           at,        dead_circumflex,            dead_caron ] };
 
-    key <AD01> { [        comma,         less,    dead_cedilla,       asciitilde ] };
+
+    key <AD01> { [   adiaeresis,   Adiaeresis,           comma,            comma ] };  // original AltGr
     key <AD02> { [            w,            W,           aring,            Aring ] };
     key <AD03> { [            f,            F,        function,        dead_hook ] };
     key <AD04> { [            p,            P,          oslash,         Ooblique ] };
@@ -769,22 +769,22 @@ xkb_symbols "colemak" {
     key <AD07> { [            l,            L,         adiaeresis,   Adiaeresis  ] };
     key <AD08> { [            u,            U,         udiaeresis,    Udiaeresis ] };
     key <AD09> { [            o,            O,         odiaeresis,   Odiaeresis  ] };
-
     key <AD10> { [       period,      greater,   dead_abovedot,       asciitilde ] };
-    key <AD11> { [  bracketleft,    braceleft,   guillemotleft,        0x1002039 ] };
-    key <AD12> { [ bracketright,   braceright,  guillemotright,        0x100203a ] };
+    key <AD11> { [         plus,     asterisk,        asterisk,        asterisk  ] };
+    key <AD12> { [  bracketleft,    braceleft,   guillemotleft,        0x1002039 ] };
+    key <BKSL> { [ bracketright,   braceright,  guillemotright,        0x100203a ] };
 
     key <AC01> { [            a,            A,         lstroke,      Lstroke ] };
     key <AC02> { [            r,            R,      registered,        U2030 ] };
     key <AC03> { [            s,            S,          ssharp,  dead_stroke ] };
     key <AC04> { [            t,            T,          dagger,   dead_caron ] };
     key <AC05> { [            d,            D,  dead_diaeresis,   asciitilde ] };
-    key <AC06> { [            h,            H,      Left,        Left ] };
-    key <AC07> { [            n,            N,      Down,        Down ] };
-    key <AC08> { [            e,            E,        Up,          Up ] };
-    key <AC09> { [            i,            I,     Right,       Right ] };
-    key <AC10> { [            j,            J,   dstroke,     Dstroke ] };
-    key <AC11> { [            q,            Q, adiaeresis, Adiaeresis ] };
+    key <AC06> { [            h,            H,       Left,        Left ] };
+    key <AC07> { [            n,            N,       Down,        Down ] };
+    key <AC08> { [            e,            E,         Up,          Up ] };
+    key <AC09> { [            i,            I,      Right,       Right ] };
+    key <AC10> { [            j,            J,    dstroke,     Dstroke ] };
+    key <AC11> { [            q,            Q, adiaeresis,  Adiaeresis ] };
 
 
     key <AB01> { [            y,            Y,              ae,               AE ] };
@@ -794,13 +794,15 @@ xkb_symbols "colemak" {
     key <AB05> { [            b,            B,      dead_breve,       asciitilde ] };
     key <AB06> { [            k,            K,          ntilde,           Ntilde ] };
     key <AB07> { [            m,            M,     dead_macron,       asciitilde ] };
-    key <AB08> { [    semicolon,     question,    questiondown,       asciitilde ] };
-    key <AB09> { [   apostrophe,           at,          otilde,           Otilde ] };
-    key <AB10> { [         colon,       slash,      odiaeresis,       Odiaeresis ] };
+    key <AB08> { [        equal,   numbersign,        question,     questiondown ] };
+    key <AB09> { [    semicolon,        colon,          otilde,           Otilde ] };
+    key <AB10> { [        minus,   underscore,      odiaeresis,       Odiaeresis ] };
 
 //  key <CAPS> { [          F14,          F15,             F16,       F17 ] };
-    key <AE11> { [        minus,   underscore,    ssharp, ssharp ] };
+//comma,         less              endash,           emdash        asciitilde  
+//  key <AE11> { [        minus,   underscore,    ssharp, ssharp ] };
     key <SPCE> { [        space,        space,           space,     nobreakspace ] };
+    key <KPMU> { [        comma,        comma, rightsinglequotemark, dead_abovering ] };
 
     include "level3(ralt_switch)"
 };

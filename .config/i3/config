@@ -1,5 +1,6 @@
 exec picom 
 exec /home/ksui/Public/xcapeConfig.sh
+exec "nitrogen --set-auto /home/ksui/.config/i3/wallpaper/kate-hazen-fractal-mountains.png"
 
 gaps inner 8
 gaps outer 2
